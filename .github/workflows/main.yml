@@ -45,4 +45,4 @@ jobs:
         files: |
           reports/cypress-junit.xml
     - name: Version
-      uses: paulhatch/semantic-version@latest
+      uses: paulhatch/semantic-version@v5.4.0
