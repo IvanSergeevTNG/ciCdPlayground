@@ -28,9 +28,9 @@ jobs:
       run: yarn test
     - name: Publish unit test results
       uses: EnricoMi/publish-unit-test-result-action@v2
-      check_name: Unit test results
       if: (!cancelled())
       with:
+        check_name: Unit test results
         files: |
           reports/jest-junit.xml
     - name: Build
@@ -39,9 +39,9 @@ jobs:
       run: yarn test:e2e
     - name: Publish integration test results
       uses: EnricoMi/publish-unit-test-result-action@v2
-      check_name: Integration test results
       if: (!cancelled())
       with:
+        check_name: Integration test results
         files: |
           reports/cypress-junit.xml
     - name: Version
