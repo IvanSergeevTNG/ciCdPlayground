@@ -4,10 +4,6 @@ pipeline {
         nodejs 'yarn'
     }
 
-    environment {
-        TERM = 'xterm'
-    }
-
     stages {
         stage('install') {
             steps {
@@ -57,6 +53,13 @@ pipeline {
                     profileName: 'role-based-access', 
                     userMetadata: []
             }
+        }
+    }
+
+    post {
+        always {
+            // Ensure reports are archived even if tests fail
+            junit '**/reports/**/*.xml'
         }
     }
 }
