@@ -4,6 +4,10 @@ pipeline {
         nodejs 'yarn'
     }
 
+    environment {
+        TERM = 'xterm'
+    }
+
     stages {
         stage('install') {
             steps {
