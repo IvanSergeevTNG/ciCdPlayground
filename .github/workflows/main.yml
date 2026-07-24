@@ -47,7 +47,7 @@ jobs:
   
   version:
     runs-on: ubuntu-latest
-    requires: build
+    needs: build
     steps:
     - name: Version
       uses: paulhatch/semantic-version@v5.4.0
