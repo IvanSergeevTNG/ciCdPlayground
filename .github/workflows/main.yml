@@ -26,7 +26,11 @@ jobs:
       run: yarn
     - name: Unit tests
       run: yarn test
+    - name: Publish unit test results
+      run: junit **/reports/**/*.xml
     - name: Build
       run: yarn build
     - name: Integration tests
       run: yarn test:e2e
+    - name: Publish integration test results
+      run: junit **/reports/**/*.xml
